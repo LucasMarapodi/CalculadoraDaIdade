@@ -1,0 +1,38 @@
+﻿@model Projeto_Aniversario.Models.DataModel
+
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (@Html.BeginForm())
+{
+
+<div class="w-100 p-3 d-flex justify-content-center" style="background-color: #d6d6d6; ">
+    <div class="row m-2 p-1">
+
+        <div class="col-6">
+            <label>Data de Nascimento:</label>
+            @Html.TextBoxFor(model => model.DataAniversario,
+             new
+             {
+                 @class = "form-control",
+                 @Type = "date"
+             }
+        )
+            @Html.ValidationMessageFor(model => model.DataAniversario, "", new { @class = "text-danger" })
+        </div>
+        <div class="col mt-4 ">
+            <button type="submit" class="btn btn-primary">Calcule sua Idade</button>
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+}
